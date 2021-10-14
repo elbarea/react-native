@@ -1,40 +1,30 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  Button,
-  Alert,
-  Platform,
-  StatusBar,
-  Dimensions,
-} from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
+import { View, StatusBar } from "react-native";
 
 export default function App() {
-  console.log(StatusBar.currentHeight);
-  const { landscape } = useDeviceOrientation();
   return (
-    <View style={{ backgroundColor: "#ffff", flex: 1, flexDirection: "row" }}>
+    <View
+      style={{
+        backgroundColor: "#ffff",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center", //main axis
+        alignItems: "center", //secondary axis
+      }}
+    >
       <View
         style={{
           backgroundColor: "dodgerblue",
           width: 100,
-          height: 100,
+          height: 300,
+          alignSelf: "flex-start"
         }}
       ></View>
       <View
         style={{
           backgroundColor: "gold",
           width: 100,
-          height: 100,
+          height: 200,
         }}
       ></View>
       <View
