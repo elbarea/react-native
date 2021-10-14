@@ -15,16 +15,20 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: 100,
-          height: 300,
-          alignSelf: "flex-start"
+          width: 400,
+          flexShrink: 1, //let items shrink to fit others items on the screen if overflowing
+          height: 100,
+          //flexBasis: 100, //item size alogn the primary axis
+          //flexGrow: 1,  //same as setting flex property
+          //flex: 1
+          //flex: -1 //same as setting flexShrink
         }}
       ></View>
       <View
         style={{
           backgroundColor: "gold",
           width: 100,
-          height: 200,
+          height: 100,
         }}
       ></View>
       <View
