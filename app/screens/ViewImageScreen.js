@@ -2,6 +2,7 @@ import React from "react";
 import {
   Image,
   ImageBackground,
+  Platform,
   StatusBar,
   StyleSheet,
   Text,
@@ -25,7 +26,8 @@ export default function ViewImageScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "grey",
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   closeIcon: {
     height: 50,
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 20,
     right: 30,
-    backgroundColor: "#4ECDC4"
+    backgroundColor: "#4ECDC4",
   },
   img: {
     width: "100%",
