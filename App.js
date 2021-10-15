@@ -1,39 +1,18 @@
 import React from "react";
 import {
   StyleSheet,
-  Text,
   View,
-  Image,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  Button,
-  Alert,
-  Platform,
+  Text,
   StatusBar,
-  Dimensions,
+  ImageBackground,
+  Image,
 } from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
+import ViewImageScreen from "./screens/ViewImageScreen";
 
+import WelcomeScreen from "./screens/WelcomeScreen";
 export default function App() {
-  console.log(StatusBar.currentHeight);
-  const { landscape } = useDeviceOrientation();
-  return (
-    <View style={styles.container}>
-      <View
-        style={{
-          backgroundColor: "dodgerblue",
-          width: "100%",
-          height: landscape ? "100%" : "30%",
-        }}
-      ></View>
-
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <WelcomeScreen />
+  
 }
 
 const styles = StyleSheet.create({
@@ -42,6 +21,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  button: {
+    flex: 1,
+    width: "100%",
+  },
+  backWithLogo: {
+    flex: 8,
+    width: "100%",
+    height: "100%",
+    alignItems: "center",
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    marginTop: 50
   },
 });
